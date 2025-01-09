@@ -54,3 +54,25 @@
   - name: print the variable
     ansible.builtin.debug:
       msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
+
+
+
+
+
+- name: variables
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: COURSE
+    prompt: please enter Course name
+  - name: DURATION
+    prompt: Please enter Duration
+  - name: TRAINER
+    prompt: please enter trainer name
+  tasks:
+  - name: print the variable
+    ansible.builtin.debug:
+      msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
+
+
+
