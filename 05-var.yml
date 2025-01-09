@@ -21,20 +21,36 @@
 
 
 
+# - name: variables
+#   hosts: local
+#   connection: local
+#   vars:      #Play level variable
+#     COURSE: devops with aws
+#     DURATION: 120hrs
+#     TRAINER: SIVAKUMAR
+#   tasks:
+#   - name: print the variable
+#     vars:     # TAsk level variables, local variables
+#       COURSE: ansible
+#     ansible.builtin.debug:
+#       msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
+
+#   - name: print the variable
+#     ansible.builtin.debug:
+#       msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
+
+
+
+
+
+
+
 - name: variables
   hosts: local
   connection: local
-  vars:      #Play level variable
-    COURSE: devops with aws
-    DURATION: 120hrs
-    TRAINER: SIVAKUMAR
+  vars_files:
+  - course.yml
   tasks:
-  - name: print the variable
-    vars:     # TAsk level variables
-      COURSE: ansible
-    ansible.builtin.debug:
-      msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
-
   - name: print the variable
     ansible.builtin.debug:
       msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
