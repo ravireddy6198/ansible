@@ -45,15 +45,35 @@
 
 
 
-- name: variables
-  hosts: local
-  connection: local
-  vars_files:
-  - course.yml
-  tasks:
-  - name: print the variable
-    ansible.builtin.debug:
-      msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
+# - name: variables
+#   hosts: local
+#   connection: local
+#   vars_files:
+#   - course.yml
+#   tasks:
+#   - name: print the variable
+#     ansible.builtin.debug:
+#       msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
+
+
+
+
+
+# - name: variables
+#   hosts: local
+#   connection: local
+#   vars_prompt:
+#   - name: COURSE
+#     prompt: please enter Course name
+#     private: false   # it is not confidential so that it is appeared on command prompt
+#   - name: DURATION
+#     prompt: Please enter Duration
+#   - name: TRAINER
+#     prompt: please enter trainer name
+#   tasks:
+#   - name: print the variable
+#     ansible.builtin.debug:
+#       msg: " Course is {{COURSE}}, duration is {{DURATION}}, trainer is {{TRAINER}}"
 
 
 
@@ -62,14 +82,6 @@
 - name: variables
   hosts: local
   connection: local
-  vars_prompt:
-  - name: COURSE
-    prompt: please enter Course name
-    private: false   # it is not confidential so that it is appeared on command prompt
-  - name: DURATION
-    prompt: Please enter Duration
-  - name: TRAINER
-    prompt: please enter trainer name
   tasks:
   - name: print the variable
     ansible.builtin.debug:
