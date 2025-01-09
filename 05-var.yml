@@ -80,8 +80,7 @@
 
 
 - name: variables
-  hosts: local
-  connection: local
+  hosts: web
   tasks:
   - name: print the variable
     ansible.builtin.debug:
