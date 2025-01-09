@@ -1,0 +1,5 @@
+- name: PING aserver
+  hosts: web
+  tasks:  #tasks = modules = collections
+  - name: 
+    ansible.builtin.ping:
