@@ -4,7 +4,7 @@
   tasks:
     - name: install apache httpd
       ansible.builtin.package:
-       name: apache2
+       name: httpd
        state: present
        update_cache: yes
     - name: copy file with owner andpermissions
