@@ -1,5 +1,5 @@
 - name: PING aserver
-  hosts: fronend
+  hosts: frontend
   tasks:  #tasks = modules = collections
   - name: 
     ansible.builtin.ping:
