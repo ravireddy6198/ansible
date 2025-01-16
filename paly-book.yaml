@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: install apache httpd
-      ansible.builtin.apt:
+      ansible.builtin.package:
        name: apache2
        state: present
        update_cache: yes
