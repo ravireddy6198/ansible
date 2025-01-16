@@ -5,7 +5,7 @@
     - name: install apache httpd
       ansible.builtin.dnf:
        name: httpd
-       state: present
+       state: absent
        update_cache: yes
     # - name: run server
     #   ansible.builtin.service:
