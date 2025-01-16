@@ -3,14 +3,14 @@
   become: true
   tasks:
     - name: install apache httpd
-      ansible.builtin.package:
+      ansible.builtin.dnf:
        name: httpd
        state: present
        update_cache: yes
-    - name: run server
-      ansible.builtin.service:
-       name: httpd
-       state: started
+    # - name: run server
+    #   ansible.builtin.service:
+    #    name: httpd
+    #    state: started
     - name: copy file with owner andpermissions
       ansible.builtin.copy:
         src: index.html
